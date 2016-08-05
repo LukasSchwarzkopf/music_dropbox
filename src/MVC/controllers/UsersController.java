@@ -9,7 +9,7 @@ import java.security.GeneralSecurityException;
 
 public class UsersController {
 
-    public boolean sign_in(String _username, String _password) throws GeneralSecurityException, UnsupportedEncodingException {
+    public static boolean sign_in(String _username, String _password) throws GeneralSecurityException, UnsupportedEncodingException {
         String encrypted_password = Cryptor.encrypt(Database.secret, Database.secret2, _password);
         User user = User.find_by_authentication_data(_username, encrypted_password);
 
@@ -20,7 +20,7 @@ public class UsersController {
         }
     }
 
-    public boolean sign_up(String _firstname, String _lastname, String _password, String _username) throws GeneralSecurityException, UnsupportedEncodingException {
+    public static boolean sign_up(String _firstname, String _lastname, String _password, String _username) throws GeneralSecurityException, UnsupportedEncodingException {
         if(User.exists(_username)){
             return false;
         } else {
@@ -29,7 +29,7 @@ public class UsersController {
         }
     }
 
-    public boolean update(String _actual_username, String _actual_password, String _firstname, String _lastname, String _password, String _username) throws GeneralSecurityException, UnsupportedEncodingException {
+    public static boolean update(String _actual_username, String _actual_password, String _firstname, String _lastname, String _password, String _username) throws GeneralSecurityException, UnsupportedEncodingException {
         String encrypted_password = Cryptor.encrypt(Database.secret, Database.secret2, _actual_password);
         User user = User.find_by_authentication_data(_actual_username, encrypted_password);
 
@@ -44,7 +44,7 @@ public class UsersController {
         }
     }
 
-    public boolean destroy(String _username, String _password) throws GeneralSecurityException, UnsupportedEncodingException {
+    public static boolean destroy(String _username, String _password) throws GeneralSecurityException, UnsupportedEncodingException {
         String encrypted_password = Cryptor.encrypt(Database.secret, Database.secret2, _password);
         User user = User.find_by_authentication_data(_username, encrypted_password);
 

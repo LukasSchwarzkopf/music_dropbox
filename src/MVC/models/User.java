@@ -183,4 +183,8 @@ public class User {
         returnstring.append(", m_role: " + m_role);
         return returnstring.append(" }>").toString();
     }
+
+    public boolean has_role(String _role) {
+        return this.m_role == _role;
+    }
 }

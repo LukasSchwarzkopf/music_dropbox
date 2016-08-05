@@ -14,6 +14,7 @@ public class Database {
     public static List<MusicFile> MUSICFILES = new ArrayList();
     public static List<Playlist> PLAYLISTS = new ArrayList();
     public static List<PlaylistMusicFileMapping> PLAYLISTMUSICFILEMAPPINGS = new ArrayList();
+    public static List<PlaylistUserMapping> PLAYLISTUSERMAPPINGS= new ArrayList();
 
     public static String secret = "PBEWithMD5AndDES";
     public static String secret2 = "bar";

@@ -81,6 +81,11 @@ public class Playlist {
         return Database.PLAYLISTS;
     }
 
+    public PlaylistUserMapping invite(User _user){
+        PlaylistUserMapping mapping = new PlaylistUserMapping(_user, this);
+        return mapping;
+    }
+
     @Override
     public String toString() {
         StringBuilder returnstring = new StringBuilder("<MVC.models.Playlist::{");

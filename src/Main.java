@@ -1,3 +1,4 @@
+import MVC.environment.Application;
 import MVC.environment.Database;
 
 /**
@@ -10,5 +11,7 @@ public class Main {
     public static void main(String [] args){
         Database.create_test_data();
 
+        // COPY ME TO UNIT TESTS
+        Application.test(false);
     }
 }
